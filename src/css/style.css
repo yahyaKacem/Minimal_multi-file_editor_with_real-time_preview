@@ -1,0 +1,112 @@
+.editor {
+  position: absolute;
+  top     : 0;
+  left    : 0;
+  right   : 0;
+  bottom  : 0;
+}
+.editor .editor-canvas {
+  position: absolute;
+  top     : 0;
+  left    : 0;
+  right   : 0;
+  bottom  : 0;
+}
+.border-layout {
+  position        : absolute;
+  top             : 0;
+  left            : 0;
+  right           : 0;
+  bottom          : 0;
+  background-color: black;
+}
+.border-layout .pane {
+  position        : absolute;
+  box-sizing      : border-box;
+  overflow        : auto;
+  background-color: white;
+}
+.border-layout .pane .overlay {
+  z-index : 999;
+  display : none;
+  position: absolute;
+  top     : 0;
+  left    : 0;
+  right   : 0;
+  bottom  : 0;
+}
+.border-layout .pane.moving .overlay {
+  background-color: transparent;
+  display         : block;
+}
+.border-layout .pane.north {
+  top  : 0;
+  left : 0;
+  right: 0;
+}
+.border-layout .pane.south {
+  left  : 0;
+  right : 0;
+  bottom: 0;
+}
+.border-layout .pane.west {
+  top   : 0;
+  left  : 0;
+  bottom: 0;
+}
+.border-layout .pane.east {
+  top   : 0;
+  right : 0;
+  bottom: 0;
+}
+.border-layout .pane.center {
+  top   : 0;
+  left  : 0;
+  right : 0;
+  bottom: 0;
+}
+.pane.sidebar {
+  padding-right: 8px;
+}
+.pane.sidebar .nav-list a {
+  cursor: pointer;
+}
+.pane.sidebar .handle {
+  position        : absolute;
+  top             : 0;
+  right           : 0;
+  bottom          : 0;
+  width           : 8px;
+  background-color: #666;
+  cursor          : ew-resize;
+}
+.pane.sidebar .handle.moving {
+  background-color: #AAA;
+}
+.pane.sidebar .handle.constrained {
+  background-color: #966;
+}
+.pane.preview {
+  padding-left: 8px;
+}
+.pane.preview .handle {
+  position        : absolute;
+  top             : 0;
+  left            : 0;
+  bottom          : 0;
+  width           : 8px;
+  background-color: #666;
+  cursor          : ew-resize;
+}
+.pane.preview .handle.moving {
+  background-color: #AAA;
+}
+.pane.preview .handle.constrained {
+  background-color: #966;
+}
+.pane.navbar {
+  margin: 0;
+}
+.moving h1 {
+  color: red;
+}

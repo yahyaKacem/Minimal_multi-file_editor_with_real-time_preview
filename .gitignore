@@ -1,0 +1,18 @@
+##########################################################################
+############################ files to ignore #############################
+   #### to use with a custom script that create a file structure ######
+struct
+##########################################################################
+######################### directories to ignore ##########################
+    ############## temp directory for developement env ###############
+src/.tmp/
+    ################# directory for production env ###################
+build/
+    ########################### for sass #############################
+.sass-cache/
+    ##### The next are installed based on the versions listed in #####
+    ### `package.json` when you do `npm install` in this directory ###
+node_modules/
+    ##### The next are installed based on the versions listed in #####
+    # `component.json` when you do `bower install` in this directory #
+src/libs/

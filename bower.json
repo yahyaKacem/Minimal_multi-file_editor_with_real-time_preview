@@ -1,0 +1,13 @@
+{
+  "name": "Minimal multi-file editor with real-time preview",
+  "version": "0.0.1",
+  "dependencies": {
+    "ace-builds": "*",
+    "angular-ui": "*",
+    "bootstrap.css": "*",
+    "angular-unstable": "*",
+    "angular-bootstrap": "*",
+    "angular-ui-router": "*",
+    "font-awesome": "~3.2.1"
+  }
+}

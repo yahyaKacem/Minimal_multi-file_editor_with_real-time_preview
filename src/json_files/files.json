@@ -1,0 +1,14 @@
+[
+  {
+    "filename": "index.html",
+    "content": "<!doctype html>\n<html ng-app=\"plunker\" >\n<head>\n  <meta charset=\"utf-8\">\n  <title>AngularJS Plunker</title>\n  <script>document.write('<base href=\"' + document.location + '\" />');</script>\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <script data-require=\"angular.js@1.1.x\" src=\"http://code.angularjs.org/1.1.4/angular.js\"></script>\n  <script src=\"app.js\"></script>\n</head>\n<body ng-controller=\"MainCtrl\">\n  <p>Hello {{name}}!</p>\n</body>\n</html> "
+  },
+  {
+    "filename": "app.js",
+    "content": "var app = angular.module('plunker', []);\n \napp.controller('MainCtrl', function($scope) {\n  $scope.name = 'World';\n});"
+  },
+  {
+    "filename": "style.css",
+    "content": "p {\n  color: red;\n}"
+  }
+]

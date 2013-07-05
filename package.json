@@ -1,0 +1,39 @@
+{
+  "name": "Minimal_multi-file_editor_with_real-time_preview",
+  "version": "0.0.2",
+  "description": "Minimal multi-file editor with real-time preview like plunker",
+  "main": "main.app.js",
+  "scripts": {"test": "none"},
+  "repository": "https://github.com/yahyaKacem/Minimal_multi-file_editor_with_real-time_preview.git",
+  "devDependencies": {
+    "grunt": "*",
+    "gzip-js": "*",
+    "matchdep": "*",
+    "grunt-open": "*",
+    "grunt-usemin": "*",
+    "grunt-bower-hooks": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-compass": "*"
+  },
+  "keywords": [
+    "plunker",
+    "ace editor",
+    "code editor",
+    "multi file editor",
+    "real time preview"
+  ],
+  "author": {
+    "name": "Geoff Goodman",
+    "github account": "https://github.com/ggoodman"
+  },
+  "licenses": {
+    "types": "BSD"
+  }
+}
