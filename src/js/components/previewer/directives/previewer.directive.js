@@ -1,10 +1,8 @@
 previewerDirectives.previewer = function($q, $rootScope, types) {
   var linker = function($scope, $el, attrs) {
-    var withFiler;
-    withFiler = (function() {
-      var dfd, filer;
-      dfd = $q.defer();
-      filer = new Filer;
+    var withFiler = (function() {
+      var dfd   = $q.defer();
+      var filer = new Filer;
       filer.init({
         persistent: false,
         size: 1024 * 1024
@@ -12,8 +10,10 @@ previewerDirectives.previewer = function($q, $rootScope, types) {
         return $rootScope.$apply(function() {
           if (fs) {
             return dfd.resolve(filer);
+            console.log('ok');
           } else {
             return dfd.reject("Failed to create filesystem");
+            console.log('not ok');
           }
         });
       });
@@ -23,10 +23,10 @@ previewerDirectives.previewer = function($q, $rootScope, types) {
     })();
     return $scope.$watch("session.buffers", function(buffers) {
       return withFiler(function(filer) {
-        var buffer, index, promises, _fn, _i, _len;
-        promises = [];
-        index = null;
-        _fn = function(buffer) {
+        var buffer, _i;
+        var promises = [];
+        var index    = null;
+        var _fn      = function(buffer) {
           var dfd;
           dfd = $q.defer();
           filer.write(buffer.filename, {
@@ -43,7 +43,10 @@ previewerDirectives.previewer = function($q, $rootScope, types) {
           });
           return promises.push(dfd.promise);
         };
-        for (_i = 0, _len = buffers.length; _i < _len; _i++) {
+        if(buffers){
+          var _len = buffers.length;
+        }
+        for (_i = 0, _len; _i < _len; _i++) {
           buffer = buffers[_i];
           _fn(buffer);
         }

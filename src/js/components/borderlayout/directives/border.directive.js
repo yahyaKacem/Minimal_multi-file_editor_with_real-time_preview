@@ -4,12 +4,10 @@ borderLayoutDirectives.border = function() {
     var layout = ctrls[1];
     return layout.setBorder($scope.anchor, border);
   };
-  var controller = function() {
-    var Border = function($scope, $element) {
-      $scope.style = {};
-      this.scope   = $scope;
-      this.element = $element[0];
-    };
+  var controller = function($scope, $element){
+    $scope.style        = {};
+    this.scope          = $scope;
+    this.element        = $element[0];
     this.getElementSize = function() {
       var _ref = this.scope.anchor;
       if (_ref === "north" || _ref === "south") {
@@ -70,7 +68,7 @@ borderLayoutDirectives.border = function() {
       size       = Math.min(size, avail);
       return this.setSize(size, style);
     };
-    return Border;
+    return this;
   };
   return {
     restrict:    "E",

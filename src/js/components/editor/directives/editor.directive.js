@@ -1,26 +1,24 @@
 editorDirectives.editor = function() {
   var controller = function() {
-    var AceEditor = require("ace/editor").Editor;
-    var Renderer  = require("ace/virtual_renderer").VirtualRenderer;
-    var Editor    = function() {
-      this.controllers = [];
-    };
-    this.setCanvas = function(el) {
-      return this.ace = new AceEditor(new Renderer(el, "ace/theme/textmate"));
+    var AceEditor    = require("ace/editor").Editor;
+    var Renderer     = require("ace/virtual_renderer").VirtualRenderer;
+    this.controllers = [];
+    this.setCanvas   = function(el) {
+      return this.ace = new AceEditor(new Renderer(el, "ace/theme/monokai"));
     };
     this.attachBuffer = function(controller) {
       return this.controllers.push(controller);
     };
-    return Editor;
+    return this;
   };
   var linker = function(iScope, iElement, iAttrs, ctrl) {
-    $scope.$watch("session.active", function(active) {
+    iScope.$watch("session.active", function(active) {
       var controller;
       var _i;
-      var _len;
-      var _ref = ctrl.controllers;
+      var _ref     = ctrl.controllers;
+      var _len     = _ref.length;
       var _results = [];
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+      for (_i = 0, _len; _i < _len; _i++) {
         controller = _ref[_i];
         if (controller.buffer === active) {
           _results.push(ctrl.ace.setSession(controller.aceSession));
@@ -28,7 +26,7 @@ editorDirectives.editor = function() {
       }
       return _results;
     });
-    return $scope.$on("reflow", function() {
+    return iScope.$on("reflow", function() {
       return ctrl.ace.resize();
     });
   };

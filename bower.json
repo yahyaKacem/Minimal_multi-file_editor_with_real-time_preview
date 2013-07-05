@@ -4,10 +4,10 @@
   "dependencies": {
     "ace-builds": "*",
     "angular-ui": "*",
-    "bootstrap.css": "*",
+    "font-awesome": "*",
+    "sass-bootstrap": "*",
     "angular-unstable": "*",
     "angular-bootstrap": "*",
-    "angular-ui-router": "*",
-    "font-awesome": "~3.2.1"
+    "angular-ui-router": "*"
   }
 }

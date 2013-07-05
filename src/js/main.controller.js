@@ -3,7 +3,7 @@ controllers.MainCtrl = function($scope, session, Files) {
     files = data;
     $scope.session = session;
     session.reset({files: files});
-    console.log(files);
+    // console.log(files);
   });
   return $scope.addFile = function() {
     var filename;

@@ -1,10 +1,8 @@
 borderLayoutDirectives.borderLayout = function($window) {
-  var controller  = function() {
-    var BorderLayout = function($scope, $element) {
-      this.handleSize = 8;
-      this.element    = $element[0];
-      this.scope      = $scope;
-    };
+  var controller  = function($scope, $element){
+    this.handleSize = 8;
+    this.element    = $element[0];
+    this.scope      = $scope;
     this.setCenter = function(center) {
       if (this.center) {
         throw new Error("Center already assigned");
@@ -49,7 +47,7 @@ borderLayoutDirectives.borderLayout = function($window) {
       this.center.setRect(rect);
       return this.scope.$broadcast("reflow");
     };
-    return BorderLayout;
+    return this;
   };
   var linker      = function($scope, $el, attr, ctrl) {
     ctrl.reflow();

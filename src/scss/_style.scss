@@ -1,0 +1,105 @@
+.absolute {
+  position: absolute;
+  top     : 0;
+  left    : 0;
+  right   : 0;
+  bottom  : 0;
+}
+.editor {
+  @extend .absolute;
+  .editor-canvas {
+    @extend .absolute;
+  }
+}
+.border-layout {
+  @extend .absolute;
+  background-color: black;
+  .pane {
+    position        : absolute;
+    @include box-sizing(border-box);
+    overflow        : auto;
+    background-color: white;
+    .overlay {
+      z-index : 999;
+      display : none;
+      @extend .absolute;
+    }
+    &.moving .overlay {
+      background-color: transparent;
+      display         : block;
+    }
+    &.north {
+      top  : 0;
+      left : 0;
+      right: 0;
+    }
+    &.south {
+      left  : 0;
+      right : 0;
+      bottom: 0;
+    }
+    &.west {
+      top   : 0;
+      left  : 0;
+      bottom: 0;
+    }
+    &.east {
+      top   : 0;
+      right : 0;
+      bottom: 0;
+    }
+    &.center {
+      top   : 0;
+      left  : 0;
+      right : 0;
+      bottom: 0;
+    }
+  }
+}
+.pane.sidebar {
+  padding-right: $handleWidth;
+  .nav-list{
+    a {
+      cursor: pointer;
+    }
+  }
+  .handle {
+    position        : absolute;
+    top             : 0;
+    right           : 0;
+    bottom          : 0;
+    width           : $handleWidth;
+    background-color: $handleBgColor;
+    cursor          : ew-resize;
+  }
+  .handle.moving {
+    background-color: #AAA;
+  }
+  .handle.constrained {
+    background-color: $handleConstrainedBgColor;
+  }
+}
+.pane.preview {
+  padding-left: $handleWidth;
+  .handle {
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    bottom          : 0;
+    width           : $handleWidth;
+    background-color: $handleBgColor;
+    cursor          : ew-resize;
+  }
+  .handle.moving {
+    background-color: #AAA;
+  }
+  .handle.constrained {
+    background-color: $handleConstrainedBgColor;
+  }
+}
+.pane.navbar {
+  margin: 0;
+}
+.moving h1 {
+  color: red;
+}

@@ -19,8 +19,8 @@ module.exports = function(grunt) {
     jsFiles: "src/js/",
     scssFiles: "src/scss/",
     libsFiles: "src/libs/",
-    tempFiles: "src/.tmp/"
-    componentsFiles: "src/js/components",
+    tempFiles: "src/.tmp/",
+    componentsFiles: "src/js/components/",
     pkg: grunt.file.readJSON('package.json'),
     /**
      * The directory to which we throw our compiled project files.
@@ -52,28 +52,31 @@ module.exports = function(grunt) {
           '<%=tempFiles%>js/libs.js': [
             '<%=libsFiles%>angular-unstable/angular.js',
             '<%=libsFiles%>angular-bootstrap/ui-bootstrap-tpls.min.js',
-            '<%=libsFiles%>angular-ui-router/release/angular-ui-router.min.js',
-            '<%=libsFiles%>ace-builds/src/ace.js',
+            '<%=libsFiles%>angular-ui-router/release/angular-ui-router.min.js'
           ]
         }
       },
       main: {
-        fils: {
+        files: {
           '<%=tempFiles%>js/main.js': [
-            "js/main.vars.js",
-            "js/main.controller.js",
-            "js/main.app.js",
-            "js/services/files.service.js"
+            "<%=jsFiles%>main.vars.js",
+            "<%=jsFiles%>main.controller.js",
+            "<%=jsFiles%>main.app.js",
+            "<%=jsFiles%>services/files.service.js"
           ]
         }
       },
       components: {
         files: {
           '<%=tempFiles%>js/components.js': [
-            // previwer component files
-            '<%=componentsFiles%>previewer/previewer.vars.js',
-            '<%=componentsFiles%>previewer/directives/previewer.directive.js',
-            '<%=componentsFiles%>previewer/previewer.app.js',
+            // filer component files
+            '<%=componentsFiles%>filer/filer.js',
+            // editor component files
+            '<%=componentsFiles%>editor/editor.vars.js',
+            '<%=componentsFiles%>editor/directives/editorbuffer.directive.js',
+            '<%=componentsFiles%>editor/directives/editorcanvas.directive.js',
+            '<%=componentsFiles%>editor/directives/editor.directive.js',
+            '<%=componentsFiles%>editor/editor.app.js',
             // borderlayout component files
             '<%=componentsFiles%>borderlayout/borderlayout.vars.js',
             '<%=componentsFiles%>borderlayout/directives/borderlayout.directive.js',
@@ -81,23 +84,14 @@ module.exports = function(grunt) {
             '<%=componentsFiles%>borderlayout/directives/center.directive.js',
             '<%=componentsFiles%>borderlayout/directives/handle.directive.js',
             '<%=componentsFiles%>borderlayout/borderlayout.app.js',
-            // editor component files
-            '<%=componentsFiles%>editor/editor.vars.js',
-            '<%=componentsFiles%>editor/directives/editorbuffer.directive.js',
-            '<%=componentsFiles%>editor/directives/editorcanvas.directive.js',
-            '<%=componentsFiles%>editor/directives/editor.directive.js',
-            '<%=componentsFiles%>editor/editor.app.js',
-            // filer component files
-            '<%=componentsFiles%>filer/filer.js',
-            // 
-            '<%=componentsFiles%>',
-            '<%=componentsFiles%>',
-            // <script src="js/filer.js"></script>
-            // <script src="js/editor.js"></script>
-            // <script src="js/borderLayout.js"></script>
-            // <script src="js/previewer.js"></script>
-            // <script src="js/session.js"></script>
-            ""
+            // previwer component files
+            '<%=componentsFiles%>previewer/previewer.vars.js',
+            '<%=componentsFiles%>previewer/directives/previewer.directive.js',
+            '<%=componentsFiles%>previewer/previewer.app.js',
+            '<%=componentsFiles%>previewer/services/types.service.js',
+            // session component files
+            '<%=componentsFiles%>session/session.app.js',
+            '<%=componentsFiles%>session/services/session.service.js'
           ]
         }
       }
@@ -146,7 +140,7 @@ module.exports = function(grunt) {
           cssDir: '<%=tempFiles%>/css'
         }
       },
-    }
+    },
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',

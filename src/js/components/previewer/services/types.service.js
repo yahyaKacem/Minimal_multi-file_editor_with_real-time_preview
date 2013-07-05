@@ -1,4 +1,4 @@
-previewer.factory("types", function() {
+previewerApp.factory("types", function() {
   var name, type, types;
   types = {
     css: {regex: /\.css$/i, mime: "text/css"},

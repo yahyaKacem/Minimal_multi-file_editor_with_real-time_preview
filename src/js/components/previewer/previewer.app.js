@@ -1,2 +1,3 @@
-var previewer = angular.module("ped.previewer", []);
+var previewerApp = angular.module("ped.previewer", []);
 previewerDirectives.previewer.$inject = ["$q", "$rootScope", "types"];
+previewerApp.directive(previewerDirectives);
